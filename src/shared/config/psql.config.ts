@@ -20,7 +20,7 @@ const config = {
     port: process.env.PSQL_PORT || 5432,
     username: process.env.PSQL_USER || 'postgres',
     password: process.env.PSQL_PASSWORD || '123456',
-    database: process.env.PSQL_DATABASE || 'forestone',
+    database: process.env.PSQL_DATABASE || 'smanage',
     entities: ['dist/**/*.entity{.ts,.js}'],
     migrationsTableName: 'migrations',
     migrations: ['dist/**/migration/*.js'],

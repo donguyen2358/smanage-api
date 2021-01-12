@@ -1,15 +1,16 @@
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { IsAlpha, MaxLength, IsOptional } from 'class-validator';
+import { ApiPropertyOptional } from '@nestjs/swagger';
 
 export class UpdateUserDTO {
-  @ApiProperty()
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsAlpha()
+  @MaxLength(255)
   name: string;
 
   @ApiPropertyOptional()
-  password: string;
-
-  @ApiProperty()
-  email: string;
-
-  @ApiProperty()
-  phone: string;
+  @IsOptional()
+  @IsAlpha()
+  @MaxLength(255)
+  restaurantName: string;
 }

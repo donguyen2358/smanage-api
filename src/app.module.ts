@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { RestaurantModule } from './restaurants/restaurant.module';
 import PSQL_CONFIG from './shared/config/psql.config';
 
 @Module({
@@ -17,6 +18,7 @@ import PSQL_CONFIG from './shared/config/psql.config';
     TypeOrmModule.forRootAsync({
       useFactory: () => PSQL_CONFIG,
     }),
+    RestaurantModule,
   ],
   controllers: [AppController],
   providers: [AppService],

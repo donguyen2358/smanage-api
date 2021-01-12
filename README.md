@@ -35,7 +35,7 @@
 $ npm install
 
 # Install database
-$ docker run --name forestone -e POSTGRES_PASSWORD=123456 -e POSTGRES_DB=smanage -p 5432:5432 -d postgres
+$ docker run --name smanage -e POSTGRES_PASSWORD=123456 -e POSTGRES_DB=smanage -p 5432:5432 -d postgres
 ```
 
 ## Running the app

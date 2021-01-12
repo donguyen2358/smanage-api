@@ -33,19 +33,12 @@ export class UserService {
   }
 
   async create(createUserDto: CreateUserDTO): Promise<User> {
-    createUserDto.password = await this.hashPassword(createUserDto.password);
-    return this.userRepository.save(createUserDto);
+    return;
   }
 
   async update(id: string, updateUserDto: UpdateUserDTO): Promise<User> {
     const user = await this.userRepository.findOne(id);
     user.name = updateUserDto.name;
-    user.email = updateUserDto.email;
-    user.password = updateUserDto.phone;
-    if (updateUserDto.password) {
-      user.password = await this.hashPassword(updateUserDto.password);
-    }
-
     return this.userRepository.save(user);
   }
 
